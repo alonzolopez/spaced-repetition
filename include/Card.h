@@ -18,11 +18,19 @@ public:
     
     void registerInitialRating(Rating rating);
 
+    float calcD0(Rating rating);
+
     float getRetrievability();
+    float getRetrievability(double time_elapsed);
 
     int getNextInterval();
 
-    int DSRUpdate();
+    void DSRUpdate(Rating rating);
+    void DSRUpdate(Rating rating, double time_elapsed_since_last_review);
+
+    void DUpdate(Rating rating);
+
+    void SUpdate(Rating rating, double time_elapsed_since_last_review);
 
     static tm* getUTCTime();
     
@@ -30,11 +38,10 @@ public:
     
     float getDifficulty();
     
-    double getTimeElapsedSinceLastReview();
-    
     float getStability();
 
-
+    double getTimeElapsedSinceLastReview();
+    
 private:
     std::vector<float> params;
     tm* lastUTCReviewTime;
