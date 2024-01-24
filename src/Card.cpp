@@ -1,5 +1,9 @@
 #include "Card.h"
 
+Card::Card()
+{
+
+}
 Card::Card(std::vector<float> params, float factor, float decay)
     :   factor{factor}, decay{decay}
 {

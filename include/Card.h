@@ -14,7 +14,9 @@ enum Rating
 class Card
 {
 public:
+    Card();
     Card(std::vector<float> params, float factor, float decay);
+    ~Card() = default;
     
     void registerInitialRating(Rating rating);
 

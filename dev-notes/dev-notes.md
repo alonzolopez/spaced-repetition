@@ -15,11 +15,9 @@
 2. Start the container
     ```bash
     # Windows generic command
-    # docker run -v C:\Users\<username>\projects\spaced-repetition:/spaced-repetition --name spaced  -d -t --rm gcc:latest
     docker run -v C:\Users\<username>\projects\spaced-repetition:/spaced-repetition --name spaced  -d -t --rm danger89/cmake:latest
 
     # specific path
-    # docker run -v C:\Users\AL30832\projects\spaced-repetition:/spaced-repetition --name spaced  -d -t --rm gcc:latest
     docker run -v C:\Users\AL30832\projects\spaced-repetition:/spaced-repetition --name spaced  -d -t --rm danger89/cmake:latest
     ```
 
@@ -31,26 +29,14 @@ sudo apt install doxygen doxygen-latex doxygen-doc doxygen-gui
 Note: doxygen is included in the Docker container.
 
 ## Test Cases
-### Setup Gtest
-0. If you're working in the Docker container, install cmake in the Docker container, if necessary
-    ```bash
-    apt-get update && apt-get -y install cmake
-    ```
-1. Clone the repo and create the CMakeFile
-    ```bash
-    git clone https://github.com/google/googletest.git -b v1.14.0
-    cd googletest        # Main directory of the cloned repository.
-    mkdir build          # Create a directory to hold the build output.
-    cd build
-    cmake ..             # Generate native build scripts for GoogleTest.
-    ```
-2. Build and install GoogleTest
-    ```bash
-    make
-    sudo make install    # Install in /usr/local/ by default
-    ```
-
 ### Compile the Test Executable
+0. Set the proxy if necessary
+    ```bash
+    export HTTP_PROXY=http://30832:tue@proxy-west.aero.org:8080
+    export HTTPS_PROXY=http://30832:tue@proxy-west.aero.org:8080
+    export http_proxy=http://30832:tue@proxy-west.aero.org:8080
+    export https_proxy=http://30832:tue@proxy-west.aero.org:8080
+    ```
 1. Build the executable
     ```bash
     cd spaced-repetition
@@ -66,3 +52,5 @@ Note: doxygen is included in the Docker container.
 - [GoogleTest User's Guide](https://google.github.io/googletest/)
     - [GoogleTest Primer](https://google.github.io/googletest/primer.html)
     - [GoogleTest Samples](https://google.github.io/googletest/samples.html)
+    - [Assertions](https://google.github.io/googletest/reference/assertions.html)
+- [GoogleTest Generic Build Instructions](https://github.com/google/googletest/blob/main/googletest/README.md)
