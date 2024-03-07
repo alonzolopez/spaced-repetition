@@ -1,0 +1,4 @@
+{"factor": 0.2345679012345679, "decay": -0.5, "params": [0.4, 0.6, 2.4, 5.8, 4.93, 0.94, 0.86, 0.01, 1.49, 0.14, 0.94, 2.18, 0.05, 0.34, 1.26, 0.29, 2.61]}
+{"cardID": 1000001, "due": "2024-02-24 09:51:12.275088", "initialized": 0, "difficulty": -1, "stability": -1, "instrument": "piano", "intervalSemitones": 1, "intervalName": "Minor 2nd", "startingMIDINote": 48, "startingNoteName": "C3", "direction": 1}
+{"cardID": 1000002, "due": "2024-02-24 09:51:12.275088", "initialized": 0, "difficulty": -1, "stability": -1, "instrument": "piano", "intervalSemitones": 1, "intervalName": "Minor 2nd", "startingMIDINote": 48, "startingNoteName": "C3", "direction": 0}
+{"cardID": 1000003, "due": "2024-02-24 09:51:12.275088", "initialized": 0, "difficulty": -1, "stability": -1, "instrument": "piano", "intervalSemitones": 1, "intervalName": "Minor 2nd", "startingMIDINote": 49, "startingNoteName": "C#3", "direction": -1}

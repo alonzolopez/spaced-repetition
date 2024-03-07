@@ -11,8 +11,10 @@ add_executable(spaced_repetition_test ${SOURCES})
 # add include directories
 target_include_directories(spaced_repetition_test PUBLIC include)
 
-# fetch gtest
+# FetchContent section
 include(FetchContent)
+
+# fetch gtest
 FetchContent_Declare(
   googletest
   # Specify the commit you depend on and update it regularly.
@@ -22,7 +24,11 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+# fetch jsonlines
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz)
+FetchContent_MakeAvailable(json)
+
 # Now simply link against gtest or gtest_main as needed. Eg
-target_link_libraries(spaced_repetition_test gtest_main)
-#target_link_libraries(spaced_repetition_test gtest)
-#add_test(NAME example_test COMMAND example)
+target_link_libraries(spaced_repetition_test gtest_main nlohmann_json::nlohmann_json)
+# target_link_libraries(spaced_repetition_test PRIVATE )
+

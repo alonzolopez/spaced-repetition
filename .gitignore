@@ -1,3 +1,4 @@
 .vscode/*
 spaced-repetition
 build/*
+.DS_Store
